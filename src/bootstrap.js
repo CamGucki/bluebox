@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Router, Switch, Route } from "react-router-dom";
 import reducers from "./reducers";
 
@@ -19,7 +19,9 @@ function main() {
 			<Router history={history}>
 				<Layout>
 					<Switch>
-						<Route path='/' exact component={Signin}></Route>
+						<Route path='/' exact component={Signin} />
+						<Route path='/signup' exact component={Signup} />
+						<Route path='/signin' exact component={Signin} />
 					</Switch>
 				</Layout>
 			</Router>
