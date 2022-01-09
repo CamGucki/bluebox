@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Header from "./headernav/header";
 import Navbar from "./headernav/navbar";
+import LogoIconimg from "../../static/assets/images/bblogoIcon1.png";
 
 class Layout extends Component {
 	render() {
@@ -10,6 +11,7 @@ class Layout extends Component {
 				{this.props.children}
 				<Header />
 				<Navbar />
+				<img src={LogoIconimg} />
 			</div>
 		);
 	}

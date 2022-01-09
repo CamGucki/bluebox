@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Logoimg from "../../../static/assets/images/bblogo.png";
+import Logoimg from "../../../static/assets/images/bblogo1.png";
 
 class Header extends Component {
 	render() {
