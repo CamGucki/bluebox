@@ -11,7 +11,6 @@ class Layout extends Component {
 				{this.props.children}
 				<Header />
 				<Navbar />
-				<img src={LogoIconimg} />
 			</div>
 		);
 	}
