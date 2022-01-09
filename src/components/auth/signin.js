@@ -3,7 +3,7 @@ import SigninForm from "./signinForm.js";
 import PageTitle from "../pageTitle.js";
 
 class Signin extends Component {
-	onSubmit = () => {
+	onSubmit = (fields) => {
 		console.log(fields);
 	};
 
