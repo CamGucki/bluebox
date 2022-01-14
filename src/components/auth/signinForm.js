@@ -21,7 +21,7 @@ class SignInForm extends Component {
 			},
 			{
 				_id: 2,
-				title: "Forgot email",
+				title: "Forgot Email",
 				onClick: () => console.log("heythere"),
 			},
 		];
