@@ -45,11 +45,11 @@ class SignInForm extends Component {
 				/>
 				<div className='sign-in-form__line'></div>
 				<Field
-					className='sign-in-form__login'
+					className='sign-in-form__confirm'
 					onClick={() => console.log("tryna submit")}
-					type='submit'
-					title='Login'
-					name='login'
+					type='password'
+					title='Confirm Password'
+					name='confirm'
 					component={FormButton}
 				/>
 				<Details
