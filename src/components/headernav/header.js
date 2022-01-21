@@ -7,8 +7,8 @@ class Header extends Component {
 	render() {
 		return (
 			<div className='header'>
-				<img class='header-img' src={Logoimg} alt='Logoimg/50x50'></img>
-				<div className='navbar'>
+				<img className='header__img' src={Logoimg} alt='Logoimg/50x50'></img>
+				<div className='header__links'>
 					{this.props.headerLinks.map((link, index) => {
 						return (
 							<a

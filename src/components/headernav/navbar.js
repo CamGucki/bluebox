@@ -8,7 +8,7 @@ class Navbar extends Component {
 				{this.props.navbarLinks.map((link, index) => {
 					return (
 						<a
-							className='navbar__link'
+							className={`navbar__link ${link.active ? "blue-text" : ""}`}
 							key={index}
 							onClick={() => console.log("trying to switch tab")}
 						>

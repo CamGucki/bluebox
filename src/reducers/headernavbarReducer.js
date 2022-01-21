@@ -6,15 +6,17 @@ const INITIAL_STATE = {
 			title: "tototot",
 		},
 		{
-			title: "asjhdf",
+			title: "yoooo",
 		},
 	],
 	navbarLinks: [
 		{
 			title: "Account",
+			active: true,
 		},
 		{
 			title: "Purchases",
+			active: false,
 		},
 	],
 };
