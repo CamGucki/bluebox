@@ -4,4 +4,12 @@ import {
 	changeNavbarActive,
 } from "./headernavbar";
 
-export { setHeaderLinks, setNavbarLinks, changeNavbarActive };
+import { fetchUserPurchases, setPurchaseDetail } from "./user";
+
+export {
+	setHeaderLinks,
+	setNavbarLinks,
+	changeNavbarActive,
+	fetchUserPurchases,
+	setPurchaseDetail,
+};

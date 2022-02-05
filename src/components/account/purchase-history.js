@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-
 import PageTitle from "../pageTitle";
-import PurchaseDetail from "./purchase-detail";
 import Purchases from "./purchases";
+import PurchaseDetail from "./purchase-Detail";
 
 class PurchaseHistory extends Component {
 	render() {
@@ -12,8 +11,11 @@ class PurchaseHistory extends Component {
 					className='purchase-history__page-title'
 					title='Purchase History'
 				/>
-				<Purchases className='purchase-history__purchases' />
-				<PurchaseDetail className='purchase-hisrtory__detail' />
+
+				<div className='purchase-history__content'>
+					<Purchases className='purchase-history__purchases' />
+					<PurchaseDetail className='purchase-history__detail' />
+				</div>
 				<div className='purchase-history__border-bottom'></div>
 			</div>
 		);
