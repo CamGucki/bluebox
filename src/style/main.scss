@@ -14,11 +14,13 @@ html {
 @import "header-navbar";
 @import "./form-fields.scss";
 @import "./page-title.scss";
-
+//auth
 @import "./auth/sign-in.scss";
 @import "./auth/sign-up.scss";
 @import "./auth/details.scss";
-
+//account
 @import "./account/purchase-history.scss";
 @import "./account/accountInformation.scss";
 @import "./account/account.scss";
+//shop
+@import "./shop/shop.scss";

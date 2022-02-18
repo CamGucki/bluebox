@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Logoimg from "../../../static/assets/images/bblogo1.png";
 
 import { connect } from "react-redux";
+import history from "../../history";
 
 class Header extends Component {
 	render() {
@@ -14,7 +15,7 @@ class Header extends Component {
 							<a
 								className='header__link'
 								key={index}
-								onClick={() => console.log("trying to switch tab")}
+								onClick={() => history.push(link.path)}
 							>
 								{link.title}
 							</a>

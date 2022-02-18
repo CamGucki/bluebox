@@ -1,28 +1,31 @@
 import React, { Component } from "react";
-import { reduxForm, Field } from "redux-form";
-import { FormInput, FormButton } from "../formFields";
 
+import { reduxForm, Field } from "redux-form";
+
+import { FormInput, FormButton } from "../formFields";
 import Details from "../details";
+
 import history from "../../history";
 
 class SignInForm extends Component {
 	render() {
+		console.log();
 		const { className, handleSubmit } = this.props;
 		const links = [
 			{
 				_id: 0,
-				title: "Not registered Create account here",
+				title: "Not registered? Create account here",
 				onClick: () => history.push("/signup"),
 			},
 			{
 				_id: 1,
-				title: "Forgot Password",
-				onClick: () => console.log("heythere"),
+				title: "Forgot account email?",
+				onClick: () => console.log("forgot email"),
 			},
 			{
 				_id: 2,
-				title: "Forgot Email",
-				onClick: () => console.log("heythere"),
+				title: "Forgot password?",
+				onClick: () => console.log("forgot password"),
 			},
 		];
 		return (
@@ -45,11 +48,11 @@ class SignInForm extends Component {
 				/>
 				<div className='sign-in-form__line'></div>
 				<Field
-					className='sign-in-form__confirm'
-					onClick={() => console.log("tryna submit")}
-					type='password'
-					title='Confirm Password'
-					name='confirm'
+					className='sign-in-form__login'
+					onClick={() => history.push("/account")}
+					type='submit'
+					title='Login'
+					name='login'
 					component={FormButton}
 				/>
 				<Details
@@ -61,7 +64,9 @@ class SignInForm extends Component {
 		);
 	}
 }
+
 SignInForm = reduxForm({
 	form: "SignInForm",
 })(SignInForm);
+
 export default SignInForm;

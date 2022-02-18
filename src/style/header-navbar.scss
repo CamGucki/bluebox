@@ -16,19 +16,7 @@
 	}
 
 	&__link {
-		grid-column: links-s/links-e;
-		grid-row: 1/-1;
-
-		display: grid;
-		grid-template-rows: [s] 1fr [e];
-		grid-column-gap: 80px;
-
 		font-size: 16px;
-
-		& > * {
-			grid-row: s/e;
-		}
-
 		margin-right: 47px;
 	}
 }

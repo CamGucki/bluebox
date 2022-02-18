@@ -1,20 +1,29 @@
 import React, { Component } from "react";
-import SigninForm from "./signinForm.js";
-import PageTitle from "../pageTitle.js";
+import SignInForm from "./signinForm";
+import PageTitle from "../pageTitle";
 
-class Signin extends Component {
+import { connect } from "react-redux";
+import * as actions from "../../actions";
+
+class SignIn extends Component {
+	componentDidMount() {
+		this.props.setHeaderLinks([]);
+		this.props.setNavbarLinks([]);
+	}
+
 	onSubmit = (fields) => {
 		console.log(fields);
 	};
-
 	render() {
 		return (
 			<div className='sign-in'>
 				<PageTitle className='sign-in__page-title' title='Login' />
-				<SigninForm onSubmit={this.onSubmit} className='sign-in__form' />
+				<SignInForm onSubmit={this.onSubmit} className='sign-in__form' />
 			</div>
 		);
 	}
 }
 
-export default Signin;
+SignIn = connect(null, actions)(SignIn);
+
+export default SignIn;
