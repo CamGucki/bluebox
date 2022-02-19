@@ -20,6 +20,7 @@ export function setNavbarLinks(links, onClick) {
 		},
 	};
 }
+
 export function changeNavbarActive(_id) {
 	return {
 		type: CHANGE_NAVBAR_ACTIVE,

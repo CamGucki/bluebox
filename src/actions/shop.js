@@ -6,7 +6,6 @@ import {
 } from "./types";
 
 export function filterProductsWithCategoryId(_id) {
-	console.log(_id, "jello");
 	return {
 		type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
 		payload: _id,
@@ -16,7 +15,6 @@ export function filterProductsWithCategoryId(_id) {
 export function fetchShopCategories() {
 	return {
 		type: SET_SHOP_CATEGORIES,
-
 		payload: [
 			{
 				_id: 0,
@@ -60,7 +58,7 @@ export function fetchShopProducts() {
 				title: "All",
 				description: "",
 				price: "1.99",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 
 			{
@@ -68,42 +66,42 @@ export function fetchShopProducts() {
 				title: "Horror",
 				description: "",
 				price: "1.99",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 			{
 				_id: 2,
 				title: "Comedy",
 				description: "",
 				price: "1.99",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 			{
 				_id: 3,
 				title: "ChickFlix",
 				description: "",
 				price: "1.99",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 			{
 				_id: 4,
 				title: "Family/Kids",
 				description: "1.99",
 				price: "",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 			{
 				_id: 5,
 				title: "Action",
 				description: "1.99",
 				price: "",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 			{
 				_id: 6,
 				title: "Crime",
 				description: "",
 				price: "1.99",
-				genre: [0],
+				belongsTo: [0, 1],
 			},
 		],
 	};
