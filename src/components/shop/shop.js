@@ -8,15 +8,16 @@ class Shop extends Component {
 		const headerLinks = [
 			{
 				_id: 0,
-				title: "Login",
+				title: "Logout",
 				path: "/signin",
 			},
 		];
 		this.props.setHeaderLinks(headerLinks);
-		// fetch shop products action creator
+		this.props.fetchShopCategories();
 		// fetch navbar links
 		// set navbar links
 		// filter products with links
+		// fetch shop products action creator
 	}
 	render() {
 		return (
