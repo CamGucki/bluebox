@@ -5,7 +5,7 @@ import {
 } from "./headernavbar";
 import { fetchUserPurchases, setPurchaseDetail } from "./user";
 
-import { fetchShopCategories } from "./shop";
+import { fetchShopCategories, fetchShopProducts } from "./shop";
 
 export {
 	setHeaderLinks,
@@ -14,4 +14,5 @@ export {
 	fetchUserPurchases,
 	setPurchaseDetail,
 	fetchShopCategories,
+	fetchShopProducts,
 };
