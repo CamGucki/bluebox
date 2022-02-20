@@ -3,7 +3,15 @@ import {
 	SET_NAVBAR_LINKS,
 	SET_SHOP_PRODUCTS,
 	FILTER_PRODUCTS_WITH_CATEGORY_ID,
+	FILTER_PRODUCTS_WITH_QUERY,
 } from "./types";
+
+export function filterProductsWithQuery(fields) {
+	return {
+		type: FILTER_PRODUCTS_WITH_QUERY,
+		payload: fields,
+	};
+}
 
 export function filterProductsWithCategoryId(_id) {
 	return {
@@ -42,7 +50,7 @@ export function fetchShopCategories() {
 			},
 			{
 				_id: 6,
-				title: "Crime",
+				title: "Games",
 			},
 			,
 		],
@@ -55,7 +63,7 @@ export function fetchShopProducts() {
 		payload: [
 			{
 				_id: 0,
-				title: "All",
+				title: "The Conjuring",
 				description: "",
 				price: "1.99",
 				belongsTo: [0, 1],
@@ -63,45 +71,45 @@ export function fetchShopProducts() {
 
 			{
 				_id: 1,
-				title: "Horror",
+				title: "The Mummy",
 				description: "",
 				price: "1.99",
-				belongsTo: [0, 1],
+				belongsTo: [0, 4, 5, 2],
 			},
 			{
 				_id: 2,
-				title: "Comedy",
+				title: "Liar Liar",
 				description: "",
 				price: "1.99",
-				belongsTo: [0, 1],
+				belongsTo: [0, 4],
 			},
 			{
 				_id: 3,
-				title: "ChickFlix",
+				title: "Some girly moviex",
 				description: "",
 				price: "1.99",
-				belongsTo: [0, 1],
+				belongsTo: [0, 3],
 			},
 			{
 				_id: 4,
-				title: "Family/Kids",
-				description: "1.99",
-				price: "",
-				belongsTo: [0, 1],
+				title: "Shrek",
+				description: "",
+				price: "1.99",
+				belongsTo: [0, 2, 4],
 			},
 			{
 				_id: 5,
-				title: "Action",
-				description: "1.99",
-				price: "",
-				belongsTo: [0, 1],
+				title: "Matrix",
+				description: "",
+				price: "1.99",
+				belongsTo: [0, 5],
 			},
 			{
 				_id: 6,
-				title: "Crime",
+				title: "Call Of Duty",
 				description: "",
 				price: "1.99",
-				belongsTo: [0, 1],
+				belongsTo: [0, 6],
 			},
 		],
 	};
