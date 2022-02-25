@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import ShopSearchBar from "./shopSearchBar";
 import ShopProduct from "./shopProduct";
+import shopReducer from "../../reducers/shopReducer";
 
 class Shop extends Component {
 	componentDidMount() {
@@ -41,7 +42,7 @@ class Shop extends Component {
 				<ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
 				{/* shop product */}
 				<div className='shop__products'>
-					{this.props.filteredProducts.map((product) => {
+					{this.props.products.map((product) => {
 						return <ShopProduct {...product} key={product._id} />;
 					})}
 				</div>
@@ -52,10 +53,11 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-	const { categories, filteredProducts } = state.shop;
+	const { categories, filteredProducts, products } = state.shop;
 	return {
 		categories,
 		filteredProducts,
+		products,
 	};
 }
 

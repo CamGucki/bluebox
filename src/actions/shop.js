@@ -6,6 +6,8 @@ import {
 	FILTER_PRODUCTS_WITH_QUERY,
 } from "./types";
 
+import axios from "axios";
+
 export function filterProductsWithQuery(fields) {
 	return {
 		type: FILTER_PRODUCTS_WITH_QUERY,
@@ -20,14 +22,10 @@ export function filterProductsWithCategoryId(_id) {
 	};
 }
 
-export function fetchShopCategories() {
+export function fetchShopCategories(_id) {
 	return {
 		type: SET_SHOP_CATEGORIES,
 		payload: [
-			{
-				_id: 0,
-				title: "All",
-			},
 			{
 				_id: 1,
 				title: "Horror",
@@ -46,7 +44,7 @@ export function fetchShopCategories() {
 			},
 			{
 				_id: 5,
-				title: "Action",
+				title: "GuyFlix",
 			},
 			{
 				_id: 6,
@@ -58,59 +56,69 @@ export function fetchShopCategories() {
 }
 
 export function fetchShopProducts() {
-	return {
-		type: SET_SHOP_PRODUCTS,
-		payload: [
-			{
-				_id: 0,
-				title: "The Conjuring",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 1],
-			},
-
-			{
-				_id: 1,
-				title: "The Mummy",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 4, 5, 2],
-			},
-			{
-				_id: 2,
-				title: "Liar Liar",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 4],
-			},
-			{
-				_id: 3,
-				title: "Some girly moviex",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 3],
-			},
-			{
-				_id: 4,
-				title: "Shrek",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 2, 4],
-			},
-			{
-				_id: 5,
-				title: "Matrix",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 5],
-			},
-			{
-				_id: 6,
-				title: "Call Of Duty",
-				description: "",
-				price: "1.99",
-				belongsTo: [0, 6],
-			},
-		],
+	return function (dispatch) {
+		axios.get("http://localhost:5000/movies").then((response) => {
+			console.log(response.data);
+			dispatch({
+				type: SET_SHOP_PRODUCTS,
+				payload: response.data,
+			});
+		});
 	};
 }
+// 	return {
+// 		type: SET_SHOP_PRODUCTS,
+// 		payload: [
+// 			{
+// 				_id: 0,
+// 				title: "The Conjuring",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 1],
+// 			},
+
+// 			{
+// 				_id: 1,
+// 				title: "The Mummy",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 4, 5, 2],
+// 			},
+// 			{
+// 				_id: 2,
+// 				title: "Liar Liar",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 4],
+// 			},
+// 			{
+// 				_id: 3,
+// 				title: "Some girly moviex",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 3],
+// 			},
+// 			{
+// 				_id: 4,
+// 				title: "Shrek",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 2, 4],
+// 			},
+// 			{
+// 				_id: 5,
+// 				title: "Matrix",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 5],
+// 			},
+// 			{
+// 				_id: 6,
+// 				title: "Call Of Duty",
+// 				description: "",
+// 				price: "1.99",
+// 				belongsTo: [0, 6],
+// 			},
+// 		],
+// 	};
+//
