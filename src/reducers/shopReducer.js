@@ -25,28 +25,30 @@ export default function (state = INITIAL_STATE, action) {
 				products: action.payload,
 			};
 
-		case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-			var filteredProducts = [];
-			state.products.map((product) => {
-				if (product.genre.includes(action.payload)) {
-					filteredProducts.push(product);
-				}
-			});
-			return {
-				...state,
-				filteredProducts,
-			};
-		case FILTER_PRODUCTS_WITH_QUERY:
-			var filteredProducts = [];
-			state.products.map((product) => {
-				if (
-					product.title
-						.toLowerCase()
-						.includes(action.payload.query.toLowerCase())
-				) {
-					filteredProducts.push(product);
-				}
-			});
+			// case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+			// 	console.log("action.payload");
+			// 	var filteredProducts = [];
+			// 	state.products.map((product) => {
+			// 		if (product.payload.includes(action.payload)) {
+			// 			filteredProducts.push(product);
+			// 		}
+			// 	});
+
+			// return {
+			// 	...state,
+			// 	payload: filteredProducts,
+			// };
+			// case FILTER_PRODUCTS_WITH_QUERY:
+			// 	var filteredProducts = [];
+			// 	state.products.map((product) => {
+			// 		if (
+			// 			product.title
+			// 				.toLowerCase()
+			// 				.includes(action.payload.query.toLowerCase())
+			// 		) {
+			// 			filteredProducts.push(product);
+			// 		}
+			// 	});
 			return {
 				...state,
 				filteredProducts,

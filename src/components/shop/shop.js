@@ -4,19 +4,19 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import ShopSearchBar from "./shopSearchBar";
 import ShopProduct from "./shopProduct";
-import shopReducer from "../../reducers/shopReducer";
 
 class Shop extends Component {
 	componentDidMount() {
 		const headerLinks = [
 			{
-				_id: 0,
+				id: 0,
 				title: "Logout",
 				path: "/signin",
 			},
 		];
 		this.props.setHeaderLinks(headerLinks);
 		this.props.fetchShopCategories();
+
 		// fetch navbar links
 		// set navbar links
 		// filter products with links

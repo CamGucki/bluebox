@@ -22,7 +22,7 @@ export function filterProductsWithCategoryId(_id) {
 	};
 }
 
-export function fetchShopCategories(_id) {
+export function fetchShopCategories() {
 	return {
 		type: SET_SHOP_CATEGORIES,
 		payload: [
@@ -121,4 +121,4 @@ export function fetchShopProducts() {
 // 			},
 // 		],
 // 	};
-//
+// }
