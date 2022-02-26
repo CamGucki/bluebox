@@ -4,21 +4,28 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import ShopSearchBar from "./shopSearchBar";
 import ShopProduct from "./shopProduct";
+import ShopCart from "./shopCart";
 
 class Shop extends Component {
+	constructor() {
+		super();
+
+		this.state = {
+			showCart: true,
+		};
+	}
+
 	componentDidMount() {
 		const headerLinks = [
 			{
-				id: 0,
-				title: "Logout",
+				_id: 0,
+				title: "Login",
 				path: "/signin",
 			},
 		];
 		this.props.setHeaderLinks(headerLinks);
 		this.props.fetchShopCategories();
 
-		// fetch navbar links
-		// set navbar links
 		// filter products with links
 		this.props.fetchShopProducts();
 	}
@@ -37,15 +44,18 @@ class Shop extends Component {
 	};
 
 	render() {
+		<ShopCart className='shop__cart' />;
+
 		return (
 			<div className='shop'>
 				<ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
-				{/* shop product */}
 				<div className='shop__products'>
-					{this.props.products.map((product) => {
+					{this.props.filteredProducts.map((product) => {
 						return <ShopProduct {...product} key={product._id} />;
 					})}
 				</div>
+				{this.state.showCart ? <ShopCart className='shop__cart' /> : ""}
+
 				{/* shop cart button */}
 			</div>
 		);
@@ -53,13 +63,13 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-	const { categories, filteredProducts, products } = state.shop;
+	const { categories, filteredProducts } = state.shop;
 	return {
 		categories,
 		filteredProducts,
-		products,
 	};
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);
+
 export default Shop;
