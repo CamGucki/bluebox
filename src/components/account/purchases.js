@@ -16,8 +16,8 @@ class Purchases extends Component {
 				{this.props.purchases.map((purchase) => {
 					return (
 						<a
-							onClick={() => this.props.setPurchaseDetail(purchase._id)}
-							key={purchase._id}
+							onClick={() => this.props.setPurchaseDetail(purchase.id)}
+							key={purchase.id}
 							className='purchases__purchase purchase'
 						>
 							<img

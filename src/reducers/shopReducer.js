@@ -6,53 +6,53 @@ import {
 } from "../actions/types";
 
 const INITIAL_STATE = {
-	categories: [],
+	// categories: [],
 	products: [],
-	filteredProducts: [],
+	// filteredProducts: [],
 };
 
 export default function (state = INITIAL_STATE, action) {
 	switch (action.type) {
-		case SET_SHOP_CATEGORIES:
-			const categories = action.payload;
-			return {
-				...state,
-				categories,
-			};
+		// case SET_SHOP_CATEGORIES:
+		// 	const categories = action.payload;
+		// 	return {
+		// 		...state,
+		// 		categories,
+		// 	};
 		case SET_SHOP_PRODUCTS:
 			return {
 				...state,
 				products: action.payload,
 			};
 
-			// case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-			// 	console.log("action.payload");
-			// 	var filteredProducts = [];
-			// 	state.products.map((product) => {
-			// 		if (product.payload.includes(action.payload)) {
-			// 			filteredProducts.push(product);
-			// 		}
-			// 	});
+		// case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+		// 	console.log("action.payload");
+		// 	var filteredProducts = [];
+		// 	state.products.map((product) => {
+		// 		if (product.payload.includes(action.payload)) {
+		// 			filteredProducts.push(product);
+		// 		}
+		// 	});
 
-			// return {
-			// 	...state,
-			// 	payload: filteredProducts,
-			// };
-			// case FILTER_PRODUCTS_WITH_QUERY:
-			// 	var filteredProducts = [];
-			// 	state.products.map((product) => {
-			// 		if (
-			// 			product.title
-			// 				.toLowerCase()
-			// 				.includes(action.payload.query.toLowerCase())
-			// 		) {
-			// 			filteredProducts.push(product);
-			// 		}
-			// 	});
-			return {
-				...state,
-				filteredProducts,
-			};
+		// return {
+		// 	...state,
+		// 	payload: filteredProducts,
+		// };
+		// case FILTER_PRODUCTS_WITH_QUERY:
+		// 	var filteredProducts = [];
+		// 	state.products.map((product) => {
+		// 		if (
+		// 			product.title
+		// 				.toLowerCase()
+		// 				.includes(action.payload.query.toLowerCase())
+		// 		) {
+		// 			filteredProducts.push(product);
+		// 		}
+		// 	});
+		// return {
+		// 	...state,
+		// 	filteredProducts,
+		// };
 		default:
 			return state;
 	}

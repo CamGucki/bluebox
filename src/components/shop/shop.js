@@ -18,40 +18,39 @@ class Shop extends Component {
 	componentDidMount() {
 		const headerLinks = [
 			{
-				_id: 0,
-				title: "Login",
+				id: 0,
+				title: "Logout",
 				path: "/signin",
 			},
 		];
 		this.props.setHeaderLinks(headerLinks);
-		this.props.fetchShopCategories();
+		// this.props.fetchShopCategories();
 
 		// filter products with links
 		this.props.fetchShopProducts();
 	}
 
-	shouldComponentUpdate(nextProps) {
-		if (this.props != nextProps) {
-			this.props.setNavbarLinks(nextProps.categories, (_id) =>
-				this.props.filterProductsWithCategoryId(_id)
-			);
-		}
-		return true;
-	}
+	// shouldComponentUpdate(nextProps) {
+	// 	if (this.props != nextProps) {
+	// 		this.props.setNavbarLinks(nextProps.categories, (id) =>
+	// 			this.props.filterProductsWithCategoryId(id)
+	// 		);
+	// 	}
+	// 	return true;
+	// }
 
-	onSubmit = (fields) => {
-		this.props.filterProductsWithQuery(fields);
-	};
+	// onSubmit = (fields) => {
+	// 	this.props.filterProductsWithQuery(fields);
+	// };
 
 	render() {
-		<ShopCart className='shop__cart' />;
-
 		return (
 			<div className='shop'>
 				<ShopSearchBar onSubmit={this.onSubmit} className='shop__search-bar' />
+				{/* shop product */}
 				<div className='shop__products'>
-					{this.props.filteredProducts.map((product) => {
-						return <ShopProduct {...product} key={product._id} />;
+					{this.props.products.map((product) => {
+						return <ShopProduct {...product} key={product.id} />;
 					})}
 				</div>
 				{this.state.showCart ? <ShopCart className='shop__cart' /> : ""}
@@ -63,10 +62,9 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-	const { categories, filteredProducts } = state.shop;
+	const { products } = state.shop;
 	return {
-		categories,
-		filteredProducts,
+		products,
 	};
 }
 

@@ -7,7 +7,7 @@ class Details extends Component {
 		if (links) {
 			children = links.map((link) => {
 				return (
-					<a key={link._id} onClick={link.onClick} className='details__link'>
+					<a key={link.id} onClick={link.onClick} className='details__link'>
 						{link.title}
 					</a>
 				);
@@ -15,7 +15,7 @@ class Details extends Component {
 		} else if (info) {
 			children = info.map((item) => {
 				return (
-					<div key={item._id} className='details__item'>
+					<div key={item.id} className='details__item'>
 						{item.title}
 					</div>
 				);

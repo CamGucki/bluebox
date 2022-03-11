@@ -5,9 +5,9 @@ import * as actions from "../../actions";
 
 class Navbar extends Component {
 	handleOnClick = (link) => {
-		this.props.changeNavbarActive(link._id);
+		this.props.changeNavbarActive(link.id);
 		if (this.props.onClick) {
-			this.props.onClick(link._id);
+			this.props.onClick(link.id);
 		}
 	};
 	render() {

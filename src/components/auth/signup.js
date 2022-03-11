@@ -6,6 +6,22 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 class SignUp extends Component {
+	constructor(props) {
+		super(props);
+
+		this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+		this.handleUnsuccessfulAuth = this.handleUnsuccessfulAuth.bind(this);
+	}
+
+	handleSuccessfulAuth() {
+		this.props.handleSuccessfulLogin();
+		this.props.history.push("/account");
+	}
+
+	handleUnsuccessfulAuth() {
+		this.props.handleUnsuccessfulLogin();
+	}
+
 	componentDidMount() {
 		this.props.setHeaderLinks([]);
 		this.props.setNavbarLinks([]);
